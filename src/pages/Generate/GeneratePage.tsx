@@ -72,7 +72,7 @@ export const GeneratePage = () => {
     }, [successMessage]);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-testid="generate-page">
             <Typography as="h1" size="m" className={styles.title}>
                 Сгенерируйте готовый csv-файл нажатием одной кнопки
             </Typography>
@@ -85,6 +85,7 @@ export const GeneratePage = () => {
                 className={cn(styles.generateButton, {
                     [styles.isGenerating]: isGenerating,
                 })}
+                data-testid="generate-button"
             >
                 {isGenerating ? <Loader /> : 'Начать генерацию'}
             </Button>

@@ -15,7 +15,7 @@ export const ClearHistoryButton = () => {
     }
 
     return (
-        <Button variant="clear" onClick={handleClearHistory}>
+        <Button variant="clear" onClick={handleClearHistory} data-testid="clear-history">
             Очистить всё
         </Button>
     );

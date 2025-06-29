@@ -113,7 +113,7 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
     const renderContent = () => {
         if (isProcessing) {
             return (
-                <div className={styles.fileProcessing}>
+                <div className={styles.fileProcessing} data-testid="loader">
                     <Loader />
                 </div>
             );
@@ -172,8 +172,16 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
             onClick={handleZoneClick}
             role="button"
             tabIndex={0}
+            data-testid="dropzone"
         >
-            <input type="file" accept=".csv" ref={inputRef} onChange={handleInputChange} hidden />
+            <input
+                type="file"
+                accept=".csv"
+                ref={inputRef}
+                onChange={handleInputChange}
+                hidden
+                data-testid="file-input"
+            />
 
             {renderContent()}
 

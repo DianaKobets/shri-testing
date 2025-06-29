@@ -5,6 +5,7 @@
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "module": "ESNext",
         "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
 
         /* Bundler mode */
         "moduleResolution": "bundler",
@@ -32,8 +33,9 @@
             "@ui/*": ["src/ui/*"],
             "@constants/*": ["src/constants/*"],
             "@app-types/*": ["src/types/*"]
-        }
+        },
+        "types": ["vitest/globals", "@testing-library/jest-dom", "@playwright/test"]
     },
-    "include": ["src"],
+    "include": ["src", "vitest.config.ts", "playwright.config.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
